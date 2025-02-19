@@ -1,6 +1,12 @@
 from django.shortcuts import render
 
 def index(request):
+    print(dir(request))
+    print(F"{request.method} - {request.path}")
+    print(F"{request.scheme} - {request.get_host()}")
+    print(F"{request.user} - {request.user.is_authenticated}")
+    print(F"User-Agent: {request.headers} ")
+
     context = {
         'curso': "Web progamming with Django Framework",
         'other': "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source."
