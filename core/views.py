@@ -16,7 +16,7 @@ def contato(request):
     return render(request, 'contato.html')
 
 def produto(request, pk):
-    prod = Produto.objects.get(id=pk)
+    prod = Produto.objects.get(id=pk)#vai buscar o produto pelo id
     
     context = {
         'produto': prod

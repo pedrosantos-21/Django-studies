@@ -24,7 +24,7 @@
         <tbody>
         {% for produto in produtos %}
             <tr>
-                <td><a href="{% url 'produto' produto.id %}" >{{ produto.nome }}</a></td>
+                <td><a href="{% url 'produto' produto.id %}" >{{ produto.nome }}</a></td> <!-- rota do produto que vai exibir o seu ID no caminho -->
                 <td>{{ produto.preco }}</td>
             </tr>
         {% endfor %}
