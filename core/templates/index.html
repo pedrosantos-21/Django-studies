@@ -1,3 +1,4 @@
+{%load static %} <!--Carrega arquivos estaticos-->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,10 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django1 - index </title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}"> <!--Carrega o arquivo css-->
 </head>
 
 <body>
     <h1>index</h1>
+
+    <img src="{% static 'images/django.png'%}" alt="">
 
     <h2>{{ curso }}</h2>
 
