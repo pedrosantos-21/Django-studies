@@ -1,0 +1,1 @@
+web: gunicore djnago1.wsgi --log-file -
