@@ -1,4 +1,7 @@
 from django.shortcuts import render # type: ignore
+from django.shortcuts import get_object_or_404
+from django.http import HttpResponse # type: ignore
+from django.template import loader # type: ignore
 
 from core.models import Produto
 
@@ -16,9 +19,18 @@ def contato(request):
     return render(request, 'contato.html')
 
 def produto(request, pk):
-    prod = Produto.objects.get(id=pk)#vai buscar o produto pelo id
+    #prod = Produto.objects.get(id=pk)#vai buscar o produto pelo id
+    prod = get_object_or_404(Produto, id=pk) #vai buscar o produto pelo id ou retorna 404 se não encontrar
     
     context = {
         'produto': prod
     } 
     return render(request, 'produto.html', context)
+
+def error404(request, exception=None):
+    template = loader.get_template('404.html')
+    return HttpResponse(content=template.render(),content_type='text/html; charsert=utf8', status=404)  
+
+def error500(request):
+    template = loader.get_template('500.html')
+    return HttpResponse(content=template.render(),content_type='text/html; charsert=utf8', status=500)

@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-wcbunqy&$x55!2xzd^d068r+slk*13f32yn9bq0jt2&yp3px4(
 DEBUG = True #Quando for falso isso não vai exibir mesngaens de erro quando está em erro 
 
 ALLOWED_HOSTS = ["*"]#isso precisa ser alterado para o ip do servidor
-
+ 
 
 # Application definition
 
@@ -127,3 +127,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #Local onde os arquivos esta
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGOUT_REDIRECT_URL = 'index'# URL para redirecionar após o logout, se não for definido, o padrão é a página de login
