@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-wcbunqy&$x55!2xzd^d068r+slk*13f32yn9bq0jt2&yp3px4(
 "# DEBUG = True" #Isso é usado para desenvolvimento, quando for para produção isso precisa ser alterado para falso
 # Isso é usado para desenvolvimento, quando for para produção isso precisa ser alterado para falso
 
-DEBUG = True #Quando for falso isso não vai exibir mesngaens de erro quando está em erro 
+DEBUG = False #Quando for falso isso não vai exibir mesngaens de erro quando está em erro 
 
 ALLOWED_HOSTS = ["*"]#isso precisa ser alterado para o ip do servidor
  
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', #Usado para servir arquivos estaticos em produção
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
