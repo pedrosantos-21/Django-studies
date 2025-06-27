@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wcbunqy&$x55!2xzd^d068r+slk*13f32yn9bq0jt2&yp3px4('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-"# DEBUG = True" #Isso é usado para desenvolvimento, quando for para produção isso precisa ser alterado para falso
+"# DEBUG = False" #Isso é usado para desenvolvimento, quando for para produção isso precisa ser alterado para falso
 # Isso é usado para desenvolvimento, quando for para produção isso precisa ser alterado para falso
 
 DEBUG = True #Quando for falso isso não vai exibir mesngaens de erro quando está em erro 
 
-ALLOWED_HOSTS = ['django1-pv-57abc76057db.herokuapp.com', '.herokuapp.com']#isso precisa ser alterado para o ip do servidor
+ALLOWED_HOSTS = ['https://django1-pv-57abc76057db.herokuapp.com/']#isso precisa ser alterado para o ip do servidor
  
 
 # Application definition
