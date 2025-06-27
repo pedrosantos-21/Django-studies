@@ -1,1 +1,1 @@
-web: gunicore djnago1.wsgi --log-file -
+web: gunicorn djnago1.wsgi --log-file -
