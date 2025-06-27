@@ -82,16 +82,16 @@ WSGI_APPLICATION = 'django1.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config(        # Use DATABASE_URL do ambiente ou, por padrão, utilize SQLite
-        default='sqlite:///db.sqlite3', # Fallback para desenvolvimento local
-        conn_max_age=600 # Para manter as conexões ativas e melhorar o desempenho
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3', # Para manter o local funcionando
+        conn_max_age=600, # Recomendado para Heroku
+        ssl_require=True, # Importante para PostgreSQL no Heroku
     )
-
+}
     #{
        # 'ENGINE': 'django.db.backends.sqlite3',
        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     #}
-}
 
 
 # Password validation
