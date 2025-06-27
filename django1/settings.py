@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-wcbunqy&$x55!2xzd^d068r+slk*13f32yn9bq0jt2&yp3px4(
 
 DEBUG = False #Quando for falso isso não vai exibir mesngaens de erro quando está em erro 
 
-ALLOWED_HOSTS = ["'django1-pv-57abc76057db.herokuapp.com', '.herokuapp.com'"]#isso precisa ser alterado para o ip do servidor
+ALLOWED_HOSTS = ['django1-pv-57abc76057db.herokuapp.com', '.herokuapp.com']#isso precisa ser alterado para o ip do servidor
  
 
 # Application definition
