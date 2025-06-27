@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-wcbunqy&$x55!2xzd^d068r+slk*13f32yn9bq0jt2&yp3px4(
 
 DEBUG = False #Quando for falso isso não vai exibir mesngaens de erro quando está em erro 
 
-ALLOWED_HOSTS = ['https://django1-pv-57abc76057db.herokuapp.com/']#isso precisa ser alterado para o ip do servidor
+ALLOWED_HOSTS = ['django1-pv-57abc76057db.herokuapp.com', '.herokuapp.com']#isso precisa ser alterado para o ip do servidor
  
 
 # Application definition
@@ -79,11 +79,18 @@ WSGI_APPLICATION = 'django1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.config(        # Use DATABASE_URL do ambiente ou, por padrão, utilize SQLite
+        default='sqlite:///db.sqlite3', # Fallback para desenvolvimento local
+        conn_max_age=600 # Para manter as conexões ativas e melhorar o desempenho
+    )
+
+    #{
+       # 'ENGINE': 'django.db.backends.sqlite3',
+       # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #}
 }
 
 
